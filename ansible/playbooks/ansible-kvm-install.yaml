@@ -1,0 +1,5 @@
+- hosts: localhost
+  tasks:
+    - name: Test
+      include_role:
+       name: ansible-kvm-install

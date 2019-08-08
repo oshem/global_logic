@@ -1,0 +1,32 @@
+---
+
+- name: Install KVM
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - qemu-kvm
+    - libvirt-bin
+    - ubuntu-vm-builder
+    - bridge-utils
+    - virt-manager
+  state: present
+  become: yes
+  degelegate_to: "{{ kvm_install_host }}"
+
+- name: Start/Enable libvirtd
+  systemd:
+    state: started
+    name: libvirtd
+  become: yes
+  degelegate_to: "{{ kvm_install_host }}"
+
+- name: Check if the libvirt module is loaded
+  shell: "lsmod | grep kvm | wc -l"
+  become: yes
+  degelegate_to: "{{ kvm_install_host }}"
+  register: libvirt_mod_loaded
+
+- fail:
+    msg: "libvirt module is not loaded."
+  when: libvirt_mod_loaded.stdout == '0'
