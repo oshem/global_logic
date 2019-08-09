@@ -5,7 +5,12 @@
   become: yes
   delegate_to: "{{ kvm_install_host }}"
 
-- name: Start instance one
+- name: Start worker1
   script: ../files/vm1.sh
+  become: yes
+  delegate_to: "{{ kvm_install_host }}"
+
+- name: Start worker2
+  script: ../files/vm2.sh
   become: yes
   delegate_to: "{{ kvm_install_host }}"

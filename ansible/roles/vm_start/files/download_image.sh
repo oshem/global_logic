@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 libvirt_path=/var/lib/libvirt/images
-bs_img=global_logic/base_image.iso
+bs_img=global_logic/base_image.qcow2
 
 function copy_image() {
    echo -e "Base image does exist";
