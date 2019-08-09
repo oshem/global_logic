@@ -1,5 +1,5 @@
 - hosts: all
   tasks:
-    - name: Test
+    - name: Start VMs
       include_role:
         name: vm_start
