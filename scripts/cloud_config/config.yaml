@@ -1,0 +1,14 @@
+#cloud-config
+
+# Add users to the system.
+users:
+  - name: devops
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDP+o8PZewef2fnG8kcKKEyibuD+dFZQCtBCgplc+OTWDPqvao14vkWRxBbODG47OeBEQmrrNKvSSbhDus/sAoxg0JDZ56exPYiotj0RuG5OcDXBwPu8YSnx7j0h6XPro8GHPeE2OZFmboRtTO69fOInR09FbgCyfniN5tjT2rJEHNzPa51ZQ0uOE7565UfFaAeABZKuNxHBfvdnKUid9Xz52iAKxSHAfgqbGrzkiWTMOQ+7wBStD2Q2ANwselYiYzxsrrw+mIAYaz6DnDDwEZXrWcH6cq3TV+ZSVDzkpCdHLgJXNEbC1F8iRHdlABVq2AtqT0IQSgyfG6JiHhPdnNHTEvF9edhdHgCpv+AtAqg6/UAoTFtY13EWfxaHVMdngCrze408SebWsjXQc9UmtZqZYxJ3aUVESv0HrUlkzmIannDDCIrSDaygcn/qHHGKSxvLxhWAn9Dt9N39+cVs8i92dPdIYn/nzaoK5jjXD9KsjpJ0FywaGElYhO9uTH5mLGYgUYasulsT6v5ppb4GIdPP0tWZ8b/X3nePw9YcpMhhY/6jpJoY/+2jglTRNTDHR6erDPkQinsTIMr5gfdkGKf49RM09yEjxKGGVLPVJMHagShr3f/Nagc9srjJ8RHL6nwIOFyxPLlnSnG6gjpLjmI6tCr+A3/Mvk9uOiU0wss6Q== mechanicus
+
+#Install packages for Ansible
+packages:
+  - python

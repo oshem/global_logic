@@ -1,6 +1,6 @@
 ---
 
-- name: Install KVM
+- name: Install KVM and Cloud-init
   apt:
     name: "{{ packages }}"
   vars:
@@ -10,6 +10,7 @@
     - ubuntu-vm-builder
     - bridge-utils
     - virt-manager
+    - cloud-init
   state: present
   become: yes
   degelegate_to: "{{ kvm_install_host }}"

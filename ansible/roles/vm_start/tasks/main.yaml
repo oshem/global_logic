@@ -1,0 +1,11 @@
+---
+
+- name: Download and prepare Image
+  script: ../files/download_image.sh
+  become: yes
+  delegate_to: "{{ kvm_install_host }}"
+
+- name: Start instance one
+  script: ../files/vm1.sh
+  become: yes
+  delegate_to: "{{ kvm_install_host }}"
