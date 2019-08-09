@@ -5,6 +5,11 @@
   become: yes
   delegate_to: "{{ kvm_install_host }}"
 
+- name: Copy cloud-config
+  script: ../files/cp_cloud_cfg.sh
+  become: yes
+  delegate_to: "{{ kvm_install_host }}"
+
 - name: Start worker1
   script: ../files/vm1.sh
   become: yes
