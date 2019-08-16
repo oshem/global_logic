@@ -8,8 +8,6 @@
 - name: KVM Install
   import_tasks: install.yaml
 
-#TEST
-
 - name: Test_KVM_Install
   shell: "virsh -c qemu:///system list"
   become: yes

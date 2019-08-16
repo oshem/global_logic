@@ -1,5 +1,5 @@
-- hosts: all
+- hosts: localhost
   tasks:
-    - name: Test
+    - name: Check/Install KVM
       include_role:
        name: ansible-kvm-install

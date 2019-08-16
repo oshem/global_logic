@@ -1,21 +1,21 @@
 ---
 
 - name: Download and prepare Image
-  script: ../files/download_image.sh
+  script:  ../files/download_image.sh
   become: yes
-  delegate_to: "{{ kvm_install_host }}"
 
 - name: Copy cloud-config
-  script: ../files/cp_cloud_cfg.sh
+  copy:
+    src: ../files/config_vm1.iso
+    dest: /var/lib/libvirt/images/global_logic/config_vm1.iso
+    src: ../files/config_vm2.iso
+    dest: /var/lib/libvirt/images/global_logic/config_vm2.iso
   become: yes
-  delegate_to: "{{ kvm_install_host }}"
 
 - name: Start worker1
   script: ../files/vm1.sh
   become: yes
-  delegate_to: "{{ kvm_install_host }}"
 
 - name: Start worker2
   script: ../files/vm2.sh
   become: yes
-  delegate_to: "{{ kvm_install_host }}"
