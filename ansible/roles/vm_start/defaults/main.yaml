@@ -1,2 +1,2 @@
-kvm_vm_pool_dir: /var/lib/libvirt/images
+kvm_vm_pool_dir: /var/lib/libvirt/images/global_logic
 data_dir: /tmp/kvm

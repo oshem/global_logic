@@ -1,12 +1,10 @@
 ---
-- name: Copy cloud-config for VM1
+- name: Copy cloud-config for VM1  and VM2
   copy:
-    src: ../files/config_vm1.iso
-    dest: /var/lib/libvirt/images/global_logic/config_vm1.iso
+    src: ../files/{{ item.srcfile }}
+    dest: "{{ kvm_vm_pool_dir }}/{{ item.destfile }}"
+  with_items:
+    - { srcfile: config_vm1.iso , destfile: config_vm1.iso}
+    - { srcfile: config_vm2.iso , destfile: config_vm2.iso}
   become: yes
 
-- name: Copy cloud-config for VM2
-  copy:
-    src: ../files/config_vm2.iso
-    dest: /var/lib/libvirt/images/global_logic/config_vm2.iso
-  become: yes
