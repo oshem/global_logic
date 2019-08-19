@@ -1,5 +1,4 @@
 - hosts: localhost
-  become: yes
   tasks:
     - name: Start VMs
       include_role:

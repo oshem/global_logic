@@ -1,0 +1,5 @@
+---
+
+- name: Download and prepare Image
+  script:  ../files/download_image.sh
+  become: yes

@@ -1,25 +1,23 @@
 ---
 
-- name: Download and prepare Image
-  script:  ../files/download_image.sh
-  become: yes
-
-- name: Copy cloud-config for VM1
-  copy:
-    src: ../files/config_vm1.iso
-    dest: /var/lib/libvirt/images/global_logic/config_vm1.iso
-  become: yes
-
-- name: Copy cloud-config for VM2
-  copy:
-    src: ../files/config_vm2.iso
-    dest: /var/lib/libvirt/images/global_logic/config_vm2.iso
-  become: yes
-
-- name: Start worker1
-  script: ../files/vm1.sh
-  become: yes
-
-- name: Start worker2
-  script: ../files/vm2.sh
-  become: yes
+- name: KVM Install
+  import_tasks: prepare_base_images.yaml
+#- name: Copy cloud-config for VM1
+#  copy:
+#    src: ../files/config_vm1.iso
+#    dest: /var/lib/libvirt/images/global_logic/config_vm1.iso
+#  become: yes
+  #
+#- name: Copy cloud-config for VM2
+#  copy:
+#    src: ../files/config_vm2.iso
+#    dest: /var/lib/libvirt/images/global_logic/config_vm2.iso
+#  become: yes
+  #
+#- name: Start worker1
+#  script: ../files/vm1.sh
+#  become: yes
+  #
+#- name: Start worker2
+#  script: ../files/vm2.sh
+#  become: yes
