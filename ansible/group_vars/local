@@ -3,3 +3,4 @@ ansible_user: root
 ansible_become: yes
 ansible_become_user: root
 ansible_become_method: sudo
+ansible_sudo_pass: HxX2nu6Aedg5Ws6A

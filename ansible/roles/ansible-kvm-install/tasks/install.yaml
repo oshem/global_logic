@@ -3,6 +3,7 @@
 - name: Install KVM and Cloud-init
   apt:
     name: "{{ packages }}"
+    update_cache: yes
   vars:
     packages:
     - qemu-kvm
@@ -11,21 +12,17 @@
     - bridge-utils
     - virt-manager
     - cloud-init
-  state: present
   become: yes
-  degelegate_to: "{{ kvm_install_host }}"
 
 - name: Start/Enable libvirtd
   systemd:
     state: started
     name: libvirtd
   become: yes
-  degelegate_to: "{{ kvm_install_host }}"
 
 - name: Check if the libvirt module is loaded
   shell: "lsmod | grep kvm | wc -l"
   become: yes
-  degelegate_to: "{{ kvm_install_host }}"
   register: libvirt_mod_loaded
 
 - fail:

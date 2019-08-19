@@ -1,3 +1,2 @@
 kvm_vm_pool_dir: /var/lib/libvirt/images
 data_dir: /tmp/kvm
-kvm_install_host: localhost
