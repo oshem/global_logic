@@ -6,10 +6,6 @@
 - name: Prepare iso images
   import_tasks: cp_cloud_config.yaml
 
-#- name: Start worker1
-#  script: ../files/vm1.sh
-#  become: yes
-  #
-#- name: Start worker2
-#  script: ../files/vm2.sh
-#  become: yes
+
+- name: start VM
+  import_tasks: start_vm.yaml

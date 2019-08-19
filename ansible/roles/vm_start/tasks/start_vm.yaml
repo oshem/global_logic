@@ -1,0 +1,7 @@
+---
+- name: Copy cloud-config for VM1  and VM2
+  script: "{{ item }}"
+  with_items:
+    - ../files/vm1.sh
+    - ../files/vm2.sh
+  become: yes
