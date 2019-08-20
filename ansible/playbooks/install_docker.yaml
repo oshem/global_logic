@@ -1,0 +1,6 @@
+- hosts: v_servers
+  gather_facts: no
+  tasks:
+    - name: Install docker
+      include_role:
+        name: install_docker

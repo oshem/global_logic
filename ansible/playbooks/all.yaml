@@ -1,0 +1,4 @@
+---
+- import_playbook: ansible-kvm-install.yaml
+- import_playbook: vm_start.yaml
+- import_playbook: install_docker.yaml
