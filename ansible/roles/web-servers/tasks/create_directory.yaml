@@ -1,0 +1,15 @@
+---
+
+- name: Create directory for docker
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+    owner: devops
+    group: devops
+    mode: 0755
+  with_items:
+    - /home/devops/docker/db-data
+    - /home/devops/docker/logs/nginx
+    - /home/devops/docker/nginx
+    - /home/devops/docker/wordpress
