@@ -1,0 +1,5 @@
+- hosts: v_servers
+  tasks:
+    - name: Prepare web servers
+      include_role:
+        name: web-servers

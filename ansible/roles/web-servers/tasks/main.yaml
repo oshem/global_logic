@@ -1,0 +1,11 @@
+---
+
+- name: Create directory for web-servers
+  import_tasks: create_directory.yaml
+
+- name: Templates
+  import_tasks: template_init.yml
+
+- name: Run docker-compose
+  script:  ../files/run_docker-compose.sh
+  become: yes

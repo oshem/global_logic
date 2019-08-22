@@ -30,5 +30,5 @@
   become: yes
 
 - name: Post-install configuration
-  shell: usermod -aG docker $USER
+  shell: usermod -aG docker $USER && chown $USER /var/run/docker.sock
   become: yes

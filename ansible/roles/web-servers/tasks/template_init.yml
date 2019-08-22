@@ -1,0 +1,9 @@
+---
+
+- template:
+    src: wordpress.conf.j2
+    dest: /home/devops/docker/nginx
+
+- template:
+    src: docker-compose.yml.j2
+    dest: /home/devops/docker/docker-compose.yml
